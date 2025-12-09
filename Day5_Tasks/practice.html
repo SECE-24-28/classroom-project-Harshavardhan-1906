@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabets and Numbers</title>
+</head>
+<body>
+    <h1>Alphabets and Numbers Generator</h1>
+    
+    <button onclick="generateAlphabets()">Generate Alphabets</button>
+    <button onclick="generateNumbers()">Generate Numbers</button>
+    <button onclick="generateBoth()">Generate Both</button>
+    
+    <div id="output"></div>
+    
+    <script>
+        function generateAlphabets() {
+            let alphabets = [];
+            for (let i = 65; i <= 90; i++) {
+                alphabets.push(String.fromCharCode(i));
+            }
+            document.getElementById('output').innerHTML = '<h3>Alphabets:</h3>' + alphabets.join(', ');
+        }
+        
+        function generateNumbers() {
+            let numbers = [];
+            for (let i = 0; i <= 9; i++) {
+                numbers.push(i);
+            }
+            document.getElementById('output').innerHTML = '<h3>Numbers:</h3>' + numbers.join(', ');
+        }
+        
+        function generateBoth() {
+            let alphabets = [];
+            let numbers = [];
+            
+            for (let i = 65; i <= 90; i++) {
+                alphabets.push(String.fromCharCode(i));
+            }
+            
+            for (let i = 0; i <= 9; i++) {
+                numbers.push(i);
+            }
+            
+            document.getElementById('output').innerHTML = 
+                '<h3>Alphabets:</h3>' + alphabets.join(', ') + 
+                '<h3>Numbers:</h3>' + numbers.join(', ');
+        }
+    </script>
+</body>
+</html>
